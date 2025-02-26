@@ -2,9 +2,7 @@ caminhões = []
 
 def get_caminhões(): return caminhões
 
-
 def inserir_caminhão(caminhão): caminhões.append(caminhão)
-
 
 class Caminhão:
     def __init__(self, modelo, unidade_carga, capacidade_carga):
