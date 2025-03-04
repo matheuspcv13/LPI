@@ -31,14 +31,14 @@ if __name__ == '__main__':
     imprimir_objetos(cabeçalho, objetos=empresas_selecionadas, filtros=filtros)
 
     cadastrar_caminhões()
-    cabeçalho = "Caminhões: modelo - unidade_carga = capacidade_carga"
+    cabeçalho = "Caminhões: modelo - unidade_carga - capacidade_carga"
     imprimir_objetos(cabeçalho='\n' + cabeçalho, objetos=get_caminhões())
 
     filtros, caminhões_selecionados = selecionar_caminhoes(unidade_carga="litros")
     imprimir_objetos(cabeçalho, objetos=caminhões_selecionados, filtros=filtros)
 
-    filtros, caminhões_selecionados = selecionar_caminhoes(unidade_carga="litros", carga_máxima=29000)
+    filtros, caminhões_selecionados = selecionar_caminhoes(unidade_carga="litros", carga_mínima=2900)
     imprimir_objetos(cabeçalho, objetos=caminhões_selecionados, filtros=filtros)
 
-    filtros, caminhões_selecionados = selecionar_caminhoes(unidade_carga="litros", carga_máxima=29000, modelo="Actros")
-    imprimir_objetos(cabeçalho='\n' + cabeçalho, objetos=get_caminhões())
+    filtros, caminhões_selecionados = selecionar_caminhoes(unidade_carga="litros", carga_mínima=2900, modelo="Actroz")
+    imprimir_objetos(cabeçalho, objetos=caminhões_selecionados, filtros=filtros)

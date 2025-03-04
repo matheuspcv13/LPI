@@ -4,17 +4,17 @@ def get_caminhões(): return caminhões
 
 def inserir_caminhão(caminhão): caminhões.append(caminhão)
 
-def selecionar_caminhoes(modelo=None, unidade_carga=None, carga_máxima=None):
+def selecionar_caminhoes(modelo=None, unidade_carga=None, carga_mínima=None):
     filtros = '\nFiltros -- '
     if unidade_carga is not None: filtros += 'unidade_carga: ' + unidade_carga
-    if carga_máxima is not None: filtros += ' - carga_máxima: ' + str(carga_máxima)
+    if carga_mínima is not None: filtros += ' - carga_mínima: ' + str(carga_mínima)
     if modelo is not None: filtros += ' - modelo: ' + modelo + ' '
 
     caminhoes_selecionados = []
     for caminhão in caminhões:
         if modelo is not None and modelo != caminhão.modelo: continue
         if unidade_carga is not None and unidade_carga != caminhão.unidade_carga: continue
-        if carga_máxima is not None and carga_máxima < caminhão.capacidade_carga: continue
+        if carga_mínima is not None and carga_mínima > caminhão.capacidade_carga: continue
         caminhoes_selecionados.append(caminhão)
 
     return filtros,caminhoes_selecionados
