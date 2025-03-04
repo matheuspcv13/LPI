@@ -1,9 +1,11 @@
-def imprimir_objetos(cabeçalho, objetos, filtros = None):
-    if filtros is not None : print(filtros)
+def imprimir_objetos(cabeçalho, objetos, filtros=None):
+
+    if filtros is not None:
+        print(filtros)
     print(cabeçalho)
 
     for índice, objeto in enumerate(objetos):
-        imprimir_objeto(str(objeto))
+        imprimir_objeto(índice, str(objeto))
 
 def imprimir_objeto(índice, objeto_str):
     formato = '{} {} {}'
